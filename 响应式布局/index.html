@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<style>
+			body{
+				margin: 0px;
+				padding: 10px;
+				padding: 0px;
+				background-image: url(img/bg.png);
+			}
+			.dec{
+				margin:10px 0px;
+				width: 100%;
+				height: 20px;
+				background-image: url(img/rag.png);
+				background-size: contain;
+			}
+			.clear::after{
+				content: "";
+				display: block;
+				clear: both;
+				height: 0px;
+				visibility: hidden;
+			}
+			.left{
+				float: left;
+			}
+			.right{
+				float: right;
+			}
+			header{
+				width: 1200px;
+				margin: 0 auto;
+			}
+			.pic{
+				margin: 0px;
+				padding: 0px;
+				position: relative;
+				width: 280px;
+				height: 284px;
+			}
+			.pic img{
+				margin: 0px;
+				padding: 0px;
+				position: absolute;
+				left: 0px;
+				top: 0px;
+			}
+			nav{
+				width: 900px;
+				height: 50px;
+				font-family: arial;
+				color: #333;
+				font-size: 24px;
+				line-height: 50px;
+				
+			} 
+			nav span{
+				display: inline-block;
+				margin: 0px;
+				width: 294px;
+				text-align: center;
+			}
+			main{
+				width: 1200px;
+				margin: 0 auto;
+
+
+			}
+			main .box{
+				width: 900px;
+				margin-top:-200px ;
+				
+			}
+			main .box aside{
+				width: 100%;
+			}
+			main .box aside h4{
+				width: 100%;
+				display: block;
+				height: 30px;
+				text-align: center;
+			}
+			main .box aside .txt{
+				width: 100%;
+				text-indent: 2em;
+				line-height: 1.5em;
+				font-size: 14px;
+				color: #333;
+				margin: 10px 0px;
+			}
+			main .box article{
+				width: 100%;
+				overflow: hidden;
+				zoom: 1;
+			}
+			main .box article section{
+				float: left;
+				width: 140px;
+				margin-right:12px ;
+				text-align: center;
+				font-size: 14px;
+			}
+			main .box article section img{
+				width: 140px;
+			}
+			main .box article section:last-child{
+				margin-right:0px
+			}
+			footer{
+				width: 100%;
+				height: 20px;
+				margin-top: 20px;
+				z-index: 996;
+				background: url(img/ornament.png) no-repeat center center;
+			}
+			@media only screen and (max-width:1200px ) {
+				header{
+					width: 40%;
+					margin: 10px;
+				}
+				header .pic{
+					width: 95%;
+				}
+				header nav{
+					width: 100%;
+					margin: 10px;
+				}
+				main {
+					width: 100%;
+					
+				}
+				main .box{
+					width: 60%;
+					margin-top: -300px;
+				}
+				main .box h4{
+					width: 100%;
+				}
+				main .box .txt{
+					width: 100%;
+				}
+				main .box article{
+					width: 100%;
+				}
+				main .box article section{
+					width: 30%;
+					margin-right: 1%;
+				}
+				main .box article section img{
+					width: 100%;
+				}
+				main .box article section:nth-of-type(3){
+					margin-right: 0%;
+				}
+				main .box article section:last-child{
+					margin-right: 0%;
+				}
+			}
+			@media only screen and (max-width:600px ){
+				header{
+					width: 100%;
+				}
+				header .pic{
+					display: none;
+				}
+				 nav{
+					width: 100%;
+				}
+				 nav span{
+					width: 32%;
+				}
+				nav span{
+					font-size: 16px;
+				}
+				main .box{
+					width: 100%;
+					margin-top: 10px;
+				}
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div class="dec clear"></div>
+		<header class="clear">
+			<div class="pic left clear"><img src="img/logo-bg.png" style="width: 280px;height: 284px;"/><img src="img/logo.png" style="top:115px;left: 56px;"/></div>
+			<nav class="right">
+				<span>viewport</span>
+				<span>initial-scale</span>
+				<span>user-scalable</span>
+			</nav>
+		</header>
+
+		<main class="clear">
+			<div class="box right ">
+			<aside>
+				<h4>媒体查询与响应式布局</h4>
+				<div class="txt">
+					现在屏幕分辨率的范围很大，从 320px(iPhone)到 2560px(大型显示器)，甚至更大。用户也不只是使用台式电脑访问web站点了，他使用手机、笔记本电脑、平板电脑。所以传统的设置网站宽度为固定值，已经不能满足需要了。web设计需要适应这种新要求，页面布局需要能够根据访问设备的不同分辨率自动进行调整。使用html5和CSS3 Media Queries完成跨浏览器的响应式设计。viewport 指的是浏览器窗口 width = device-width：宽度等于当前设备的宽度 initial-scale：初始的缩放比例（默认设置为1.0） minimum-scale：允许用户缩放到的最小比例（默认设置为1.0） maximum-scale：允许用户缩放到的最大比例（默认设置为1.0） user-scalable：用户是否可以手动缩放（默认设置为no，因为我们不希望用户放大缩小页面） 这样的设置是为了兼容移动设备的展示效果。
+				</div>
+			</aside>
+			<article >
+				<section><img src="img/f-adler.jpg" /><p>html5简介</p></section>
+				<section><img src="img/f-holmes.jpg" /><p>html5简介</p></section>
+				<section><img src="img/f-moriarty.jpg" /><p>html5简介</p></section>
+				<section><img src="img/f-mycroft.jpg" /><p>html5简介</p></section>
+				<section><img src="img/f-watson.jpg" /><p>html5简介</p></section>
+				<section><img src="img/f-winter.jpg" /><p>html5简介</p></section>
+			</article>
+			</div>
+		</main>
+		<footer></footer>
+	</body>
+
+</html>

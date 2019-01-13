@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		
+		<h3>登录总时长--00:00:00</h3>
+		<h4>用户的登录时间列表:</h4>
+		<ul class="logintime">
+		</ul>
+		
+		
+		<script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+			var total=document.querySelector("h3");
+			var logintime=document.querySelector(".logintime")
+			var timer=document.querySelector(".logintime li")
+			var time=new Date();
+			var Y=time.getFullYear();
+			var M=time.getMonth();
+			var D=time.getDate();
+			var h=time.getHours();
+			var m=time.getMinutes();
+			var s=time.getSeconds();
+			var T=[];
+			window.onload=function(){
+			var time=Y+"-"+(M+1)+"-"+D+"  "+h+":"+m+":"+s
+			 $(logintime).append("<li>"+time+"</li>")
+            	T.push(time);
+            	localStorage.setItem('time',T);
+			}
+			var second = 0;
+			var t = setInterval(function(){
+			        var duration=second++;
+			        var dh=Math.floor(duration/3600);
+			        var dm=Math.floor(duration/60); 
+					var ds=Math.floor(duration%60); 
+					
+						dh=dh<10?'0'+dh:dh;
+						dm=dm<10?'0'+dm:dm;
+						ds=ds<10?'0'+ds:ds;
+			        total.innerText="登录总时长--"+dh+":"+dm+":"+ds
+			    },1000);
+			
+			console.log($(timer).eq(0).text())
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		
+		<h1>总访问时间：<span id="duration">00:00:00</span></h1>
+
+		<p>登录时间统计:</p>
+		<ul id="count">
+			
+		</ul>
+		<script type="text/javascript">
+			
+			var duration = localStorage.getItem('duration') ? localStorage.getItem('duration') : 0;
+
+			var t = setInterval(function() {
+				duration++;
+				var h = Math.floor(duration / 3600);
+				var m = Math.floor((duration % 3600) / 60);
+				var s = Math.floor(duration % 60);
+				h = h < 10 ? '0' + h : h;
+				m = m < 10 ? '0' + m : m;
+				s = s < 10 ? '0' + s : s;
+				
+				document.querySelector("#duration").innerText = h + ":" + m + ":" + s;
+				localStorage.setItem('duration', duration);
+			}, 1000);
+			function formatTime(timestamp){
+				var time=new Date();
+				time.setTime(timestamp);
+				var y=time.getFullYear();
+				var m=time.getMonth();
+				var d=time.getDate();
+				var h=time.getHours();
+				var min=time.getMinutes();
+				var s=time.getSeconds();
+				m=m<10?"0"+m:m;
+				d=d<10?"0"+d:d;
+				h=h<10?"0"+h:h;
+				min=min<10?"0"+min:min;
+				s=s<10?"0"+s:s;
+				return y+"-"+m+"-"+d+"  "+h+":"+min+":"+s
+				
+				
+			}
+
+			var historyStr=localStorage.getItem("history")?localStorage.getItem("history"):"[]";
+			var historyArr=JSON.parse(historyStr);
+			historyArr.unshift(new Date().getTime());
+			historyStr=JSON.stringify(historyArr);
+			localStorage.setItem("history",historyStr);
+			var ul=document.querySelector("#count");
+			for (var i=0;i<historyArr.length;i++) {
+				var newli=document.createElement("li");
+				newli.innerText = formatTime(historyArr[i]);
+				ul.appendChild(newli)
+				
+				
+				
+			}
+			
+			
+		</script>
+	</body>
+</html>

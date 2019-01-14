@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			#canvas{
+				display: block;
+				margin: 50px auto;
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<canvas id="canvas" width="800" height="800"></canvas>
+		<script type="text/javascript">
+			var canvas = document.getElementById("canvas");
+			var context = canvas.getContext("2d");
+			var start=0;
+			var t=setInterval(function(){
+				context.arc(400,400,300,0,(start+0.01),false);
+				context.lineTo(400,400);
+				context.fillStyle = "blue";
+				context.fill()
+				context.closePath()
+				
+				start+=0.01;
+				
+			if(start>Math.PI*2){
+					clearInterval(t)
+				}
+				
+			},10)
+		
+			
+			
+			
+			
+			
+		</script>
+
+	</body>
+
+</html>

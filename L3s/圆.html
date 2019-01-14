@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			#canvas{
+				display: block;
+				margin: 50px auto;
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<canvas id="canvas" width="800" height="800"></canvas>
+		<script type="text/javascript">
+			var canvas = document.getElementById("canvas");
+			var context = canvas.getContext("2d");
+			
+			
+			context.arc(400,400,300,0,Math.PI/2,true);//true为逆时针
+			context.lineTo(400,400)
+			context.closePath()
+			context.strokeStyle="aqua";
+			context.lineWidth="20"
+			context.stroke();
+			context.fillStyle="goldenrod"
+			context.fill()
+			
+			
+			
+		</script>
+
+	</body>
+
+</html>

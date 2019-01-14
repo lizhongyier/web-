@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			#canvas{
+				display: block;
+				margin: 50px auto;
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<canvas id="canvas" width="800" height="800"></canvas>
+		<script type="text/javascript">
+			var canvas = document.getElementById("canvas");
+			var context = canvas.getContext("2d");
+			function pie(arr){
+				var color=["orange","yellow","green","black","blue","pink","aqua"];
+				var sum=0;
+				var start=0;
+				var end=0;
+				var ends=[];
+				var index=0;
+//				sum=arr.reduce((tmp,item,index)=>{return tmp+=item;})
+
+ 			for(var i=0;i<arr.length;i++){
+ 				sum+=arr[i]
+ 			}
+ 			//第一份占总的百分比
+				ends[0]=arr[0]/sum*Math.PI*2; 
+				for(var i=1;i<arr.length;i++){
+					ends[i]=ends[i-1]+(arr[i]/sum*Math.PI*2);
+				}
+				context.fillStyle=color[index%color.length];
+				var t=setInterval(function(){
+					end+=0.01
+				context.arc(400,400,300,start,end,false);
+				context.lineTo(400,400);
+				if(end>=ends[index]){
+					index++;
+					start=end-0.01;
+					context.fillStyle=color[index%color.length]
+					context.beginPath();
+				}
+				if(index==arr.length){
+					clearInterval(t)
+				}
+				context.closePath();
+				context.fill()
+				
+			},10)
+				
+				
+				
+				
+			}
+		
+			
+			
+			
+			
+			pie([1,2,3,4,5,6])
+		</script>
+
+	</body>
+
+</html>

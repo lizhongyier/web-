@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#canvas{
+				border: 1px solid #e3e3e3;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="800" height="800"></canvas>
+		<script type="text/javascript">
+			var canvas=document.getElementById("canvas");
+			var context=canvas.getContext("2d");
+//			context.lineTo(200,200);
+//			context.lineTo(600,200);
+//			context.lineTo(600,600);
+//			context.lineTo(200,600);
+//			context.lineTo(200,200);
+
+			context.strokeStyle="aqua";
+			context.lineWidth=20;
+			context.rect(200,200,400,400);
+			context.fillStyle="rgba(255,0,0,.3)"
+			context.fill();
+			context.stroke();
+			
+			
+			context.strokeRect(150,150,500,500)
+			context.fillStyle="#ff0000"
+			context.fillRect(300,300,200,200)
+			
+			context.clearRect(400,400,400,400)
+			
+		</script>
+	</body>
+</html>

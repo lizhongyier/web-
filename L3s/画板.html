@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			#canvas{
+				display: block;
+				margin: 10px auto;
+				border: 1px solid #666;
+			}
+			.draw{
+				width: 800px;
+				display: block;
+				margin: 50px auto;
+			}
+			.draw input{
+				margin: 0px;
+				padding: 0px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="draw">
+		<input type="range" name="width" id="width" value="" min="1"max="50"/>
+		<input type="color" name="color" id="color" value="" />
+		<input type="button" name="clear" id="clear" value="清除" />
+		<input type="button" name="pen" id="pen" value="画笔" />
+		<canvas id="canvas" width="800" height="800"></canvas>
+		
+		</div>
+		<script type="text/javascript">
+			var canvas = document.getElementById("canvas");
+			var context = canvas.getContext("2d");
+			var width=document.querySelector("#width")
+			var flag=false;
+			
+			canvas.onmousedown=function(){
+				flag=true;
+				context.beginPath();
+			}
+			canvas.onmouseup=function(){
+				flag=false;
+				context.closePath();
+			}
+			
+			
+			document.querySelector("#pen").onclick=function(){
+				canvas.onmousemove=function(e){
+				var x=e.offsetX;
+				var y=e.offsetY;
+				console.log(x)
+				if(flag){
+					context.lineTo(x,y);
+					context.stroke()
+					
+				}
+			}
+			}
+			
+			document.querySelector("#color").onchange=function(){
+				context.strokeStyle=this.value
+				
+			}
+			document.querySelector("#width").onchange=function(){
+				context.lineWidth=this.value
+			}
+			document.querySelector("#clear").onclick=function(){
+				canvas.onmousemove=function(e){
+				var x=e.offsetX;
+				var y=e.offsetY;
+				console.log(x)
+				if(flag){
+					context.clearRect(x,y,width.value,width.value);
+				}
+				}
+			}
+		</script>
+
+	</body>
+
+</html>

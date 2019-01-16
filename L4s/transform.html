@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			#canavs{
+				width: 400px;
+				height: 400px;
+				border: 1px solid #666;
+				display: block;
+				margin: 50px auto;
+			}
+		</style>
+		
+	</head>
+	<body>
+		
+		<canvas id="canavs" width="800" height="800"></canvas>
+		<script type="text/javascript">
+			var canvas=document.querySelector("#canavs");
+			var context=canvas.getContext("2d");
+				context.transform(1.5,0,0,1,0,100)  //多次变化时会叠加
+				context.setTransform(1,Math.PI/4,0,1,0,100) //set每次会重置
+				context.fillRect(0,0,200,200)
+			
+			
+			
+			
+			
+			
+			
+		</script>
+		
+		
+	</body>
+</html>

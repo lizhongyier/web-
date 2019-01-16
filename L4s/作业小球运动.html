@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			#canavs{
+				width: 400px;
+				height: 400px;
+				border: 1px solid #666;
+				display: block;
+				margin: 50px auto;
+				
+			}
+		</style>
+		
+	</head>
+	<body>
+		
+		<canvas id="canavs" width="800" height="800"></canvas>
+		<script type="text/javascript">
+			var canvas=document.querySelector("#canavs");
+			var context=canvas.getContext("2d");
+			var x=25;
+			var y=25;
+			var step=0;
+			
+			context.arc(x,y,25,0,Math.PI*2)
+			context.fillStyle="aqua";
+			context.fill()
+			var t=setInterval(function(){
+				context.clearRect(0,0,800,800);
+				switch(step){
+					case 0:{x+=10;if(x>=775){step=1}} break;
+					case 1:{y+=10;if(y>=775){step=2}} break;
+					case 2:{x-=10;if(x<=25){step=3}} break;
+					case 3:{y-=10;if(y<=25){step=0}} break;
+					
+				}
+				context.beginPath();
+				context.arc(x,y,25,0,Math.PI*2)
+				context.fill()
+				
+			},50)
+			
+			
+		</script>
+		
+		
+	</body>
+</html>

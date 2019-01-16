@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			#canavs{
+				width: 400px;
+				height: 400px;
+				border: 1px solid #666;
+				display: block;
+				margin: 50px auto;
+				
+			}
+		</style>
+		
+	</head>
+	<body>
+		
+		<canvas id="canavs" width="800" height="800"></canvas>
+		<script type="text/javascript">
+			var canvas=document.querySelector("#canavs");
+			var context=canvas.getContext("2d");
+			//渐变方向
+			var color=context.createRadialGradient(400,400,0,400,400,400);
+			color.addColorStop(0,"red");//范围为0~1
+//			color.addColorStop(0.5,"green");
+			color.addColorStop(1,"blue");
+			context.fillStyle=color;
+			context.arc(400,400,400,0,Math.PI*2)//可视窗口，不影响渐变内容，只显示要显示的区域
+			context.fill()
+		</script>
+		
+		
+	</body>
+</html>

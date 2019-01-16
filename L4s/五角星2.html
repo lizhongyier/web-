@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			#canavs{
+				width: 400px;
+				height: 400px;
+				border: 1px solid #666;
+				display: block;
+				margin: 50px auto;
+				
+			}
+		</style>
+		
+	</head>
+	<body>
+		
+		<canvas id="canavs" width="800" height="800"></canvas>
+		<script type="text/javascript">
+			var canvas=document.querySelector("#canavs");
+			var context=canvas.getContext("2d");
+				
+//				context.arc(0,0,200,0,Math.PI*2)
+//				context.stroke()
+//				context.beginPath();
+//				context.arc(0,0,400,0,Math.PI*2)
+//				context.stroke()
+			
+			function star(x,y,r,deg){
+				context.save()
+				context.translate(x,y);
+				context.rotate(Math.PI/180*deg);
+				context.beginPath();
+			for (var i=0;i<5;i++) {
+				var x1=Math.cos(Math.PI/180*(18+72*i)) * r * 2;
+				var y1=Math.sin(Math.PI/180*(18+72*i)) * r * -2;
+				context.lineTo(x1,y1);
+				var x2=Math.cos(Math.PI/180*(54+72*i))*r;
+				var y2=Math.sin(Math.PI/180*(54+72*i))*-r;
+				context.lineTo(x2,y2);
+			}
+			context.closePath();
+			context.strokeStyle="orangered";
+			context.lineWidth=5;
+			context.stroke()
+			context.fillStyle='yellow';
+			context.fill()
+			context.restore();
+			}
+			star(600,100,50,30);
+			star(400,400,160,0);
+			star(100,600,50,-10);//使用时调用函数更方便
+		</script>
+		
+		
+	</body>
+</html>

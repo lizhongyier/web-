@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			#canavs{
+				width: 400px;
+				height: 400px;
+				border: 1px solid #666;
+				display: block;
+				margin: 50px auto;
+				
+			}
+		</style>
+		
+	</head>
+	<body>
+		
+		<canvas id="canavs" width="800" height="800"></canvas>
+		<script type="text/javascript">
+			var canvas=document.querySelector("#canavs");
+			var context=canvas.getContext("2d");
+			context.lineTo(400,0);
+			context.lineTo(400,800);
+			context.stroke();
+			context.beginPath();
+			context.lineTo(0,400);
+			context.lineTo(800,400);
+			context.stroke();
+			
+			context.font="bolder 50px '微软雅黑'"
+			context.strokeText("线框文字",400,200)
+			/**
+			 * left、start:左对齐
+			 * right、end:右对齐
+			 * center:居中
+			 * */
+			context.textAlign="end"
+			/**
+			 * top/hanging：上对齐
+			 * middle:居中对齐
+			 * bottom:下对齐
+			 * 
+			 * */
+
+			context.textBaseline="hanging"
+			context.fillText("实体文字",400,400)
+			
+		</script>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.wrap{
+				width: 400px;
+				height: 400px;
+				margin: 50px auto;
+				border: 1px solid #666;
+				perspective: 800px;
+				-webkit-perspective: 800px;
+			}
+			.box{
+				width: 400px;
+				height: 400px;
+				background-color: darkslategrey;
+				-webkit-transform: translateX(0px) translateY(0px) translateZ(0px);
+			}
+		</style>
+		
+	</head>
+	<body>
+		
+		<div class="wrap">
+			<div class="box"></div>
+		</div>
+		
+		<h2>translateX <span id="x">0</span>px: <input type="range" name="translate-x" id="translate-x" value="0" min="0" max="360"/></h2>
+		<h2>translateY <span id="y">0</span>px: <input type="range" name="translate-y" id="translate-y" value="0" min="0" max="360"/></h2>
+		<h2>translateZ <span id="z">0</span>px: <input type="range" name="translate-z" id="translate-z" value="0" min="-360" max="360"/></h2>
+		
+		<script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var box=$(".box");
+			$("input").on("input",function(){
+				var x=$("#translate-x").val();
+				var y=$("#translate-y").val();
+				var z=$("#translate-z").val();
+				
+				$("#x").text(x);
+				$("#y").text(y);
+				$("#z").text(z);
+				box.css("-webkit-transform","translateX("+x+"px) translateY("+y+"px) translateZ("+z+"px)")
+			})
+			
+			
+			
+
+			
+			
+		</script>
+	</body>
+</html>

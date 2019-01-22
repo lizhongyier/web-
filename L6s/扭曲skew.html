@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.wrap{
+				width: 400px;
+				height: 400px;
+				margin: 50px auto;
+				border: 1px solid #666;
+				perspective: 800px;
+				-webkit-perspective: 800px;
+			}
+			.box{
+				width: 400px;
+				height: 400px;
+				background-color: darkslategrey;
+				-webkit-transform: skew(10deg 10deg);
+			}
+		</style>
+		
+	</head>
+	<body>
+		
+		<div class="wrap">
+			<div class="box"></div>
+		</div>
+		
+		<h2>skewX <span id="x">0</span>deg: <input type="range" name="skew-x" id="skew-x" value="0" min="0" max="360"/></h2>
+		<h2>skewY <span id="y">0</span>deg: <input type="range" name="skew-y" id="skew-y" value="0" min="0" max="360"/></h2>
+		
+		<script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var box=$(".box");
+			$("input").on("input",function(){
+				var x=$("#skew-x").val();
+				var y=$("#skew-y").val();
+				
+				$("#x").text(x);
+				$("#y").text(y);
+				box.css("-webkit-transform"," skewX("+x+"deg) skewY("+y+"deg)")
+			})
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.wrap{
+				width: 400px;
+				height: 400px;
+				margin: 50px auto;
+				border: 1px solid #666;
+				perspective: 800px;
+				-webkit-perspective: 800px;
+			}
+			.box{
+				width: 400px;
+				height: 400px;
+				background-color: darkslategrey;
+				-webkit-transform: scale(1,1);
+			}
+		</style>
+		
+	</head>
+	<body>
+		
+		<div class="wrap">
+			<div class="box"></div>
+		</div>
+		
+		<h2>scaleX <span id="x">0</span>deg: <input type="range" name="scale-x" id="scale-x" value="1" min="0.1" max="2" step="0.1"/></h2>
+		<h2>scaleY <span id="y">0</span>deg: <input type="range" name="scale-y" id="scale-y" value="1" min="0.1" max="2" step="0.1"/></h2>
+		
+		<script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var box=$(".box");
+			$("input").on("input",function(){
+				var x=$("#scale-x").val();
+				var y=$("#scale-y").val();
+				
+				$("#x").text(x);
+				$("#y").text(y);
+				box.css("-webkit-transform"," scale("+x+","+y+")")
+			})
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

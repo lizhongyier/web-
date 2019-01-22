@@ -5,3 +5,4 @@
 <br/>#第四次作业:https://lizhongyier.github.io/web-/L4s/数字时钟
 <br/>#第五次作业:https://lizhongyier.github.io/web-/L5s/chart
 <br/>#第五次作业:https://lizhongyier.github.io/web-/L5s/nav
+<br/>#第六次作业:https://lizhongyier.github.io/web-/L6s/人物

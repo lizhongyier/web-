@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.wrap{
+				width: 400px;
+				height: 400px;
+				margin: 50px auto;
+				border: 1px solid #666;
+				perspective: 800px;
+				-webkit-perspective: 800px;
+			}
+			.box{
+				width: 400px;
+				height: 400px;
+				background-color: darkslategrey;
+				-webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+				-webkit-transform-origin: 0px 0px 0px;
+				/*-webkit-transform-origin: left top;*/
+			}
+		</style>
+		
+	</head>
+	<body>
+		
+		<div class="wrap">
+			<div class="box"></div>
+		</div>
+		
+		<h2>RotateX <span id="x">0</span>deg: <input type="range" name="rotate-x" id="rotate-x" value="0" min="0" max="360"/></h2>
+		<h2>RotateY <span id="y">0</span>deg: <input type="range" name="rotate-y" id="rotate-y" value="0" min="0" max="360"/></h2>
+		<h2>RotateZ <span id="z">0</span>deg: <input type="range" name="rotate-z" id="rotate-z" value="0" min="0" max="360"/></h2>
+		
+		<script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var box=$(".box");
+			$("input").on("input",function(){
+				var x=$("#rotate-x").val();
+				var y=$("#rotate-y").val();
+				var z=$("#rotate-z").val();
+				
+				$("#x").text(x);
+				$("#y").text(y);
+				$("#z").text(z);
+				box.css("-webkit-transform","rotateX("+x+"deg) rotateY("+y+"deg) rotateZ("+z+"deg)")
+			})
+			
+			
+			
+//			$("#rotate-x").click(function(){});
+//			$("#rotate-x").on('click',function(){});
+//			$("#rotate-x").bind('click',function(){});
+//			
+//			$("#rotate-x").off('click');
+//			$("#rotate-x").unbind('click');
+
+			
+			
+		</script>
+	</body>
+</html>

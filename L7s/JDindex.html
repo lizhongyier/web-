@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.css"/>
+		<style type="text/css">
+			html{
+				font-size: calc(100vw/7.5);
+			}
+			body{
+				margin: 0px;
+				font-size: 0.32em;
+			}
+			a{
+				text-decoration: none;
+			}
+			.clear:after{
+				content: "";
+				display: block;
+				clear: both;
+			}
+			.searchBar{
+				width: 100%;
+				height: 1.03rem;
+				z-index: 998;
+				background-color: #E43130;
+				display: flex;
+				position: fixed;
+				top: 0px;
+				left: 0px;
+			}
+			.searchBar .menu{
+				height: inherit;
+				width: 1.15rem;
+				text-align: center;
+				line-height: 1.03rem;
+				font-size: 0.48rem;
+				color: #fff;
+			}
+			.searchBar .login{
+				height: inherit;
+				width: 1.15rem;
+				text-align: center;
+				line-height: 1.03rem;
+				font-size: 0.32rem;
+				font-family: "微软雅黑";
+				color: #fff;
+				box-sizing: border-box;
+			}
+			.searchBar .search{
+				width: 5.1rem;
+				height: 0.7rem;
+				padding-top: 0.18rem;
+				position: relative;
+				box-sizing: border-box;
+			}
+			.searchBar .search .demo{
+				position: absolute;
+				z-index: 999;
+				top: 0.32rem;
+				left: 0.1rem;
+			}
+			.searchBar .search .demo .jd{
+				float: left;
+				width: 0.6rem;
+				height: 0.4rem;
+			}
+			.searchBar .search .demo .jd img{
+				display: block;
+				margin: 0 auto;
+				width: 0.4rem;
+				height: 0.4rem;
+			}
+			.searchBar .search .demo .lens{
+				float: right;
+				width: 0.5rem;
+				height: 0.4rem;
+				padding-top: 0.06rem;
+				border-left: 1px solid #999;
+				box-sizing: border-box;
+			}
+			.searchBar .search .demo .lens img{
+				display: block;
+				margin: 0 auto;
+				width: 0.3rem;
+				height: 0.3rem;
+			}
+			.searchBar .search input{
+				width: inherit;
+				height: inherit;
+				border-radius: 0.35rem;
+				border-width: 0rem;
+				padding-left: 1.2rem;
+				box-sizing: border-box;
+				background-color: #EFEFEF;
+			}
+			.main-nav{
+				margin: 1.1rem 0rem 0.1rem;
+				padding: 0rem;
+				list-style-type: none;
+				width: 100%;
+				height: 2.86rem;
+			}
+			.main-nav .box1,.main-nav .box2{
+				width: 100%;
+				height: 1.43rem;
+				display: flex;
+				justify-content: space-around;
+				box-sizing: border-box;
+			}
+			.main-nav a{
+				display: inline-block;
+				flex: 1;
+				text-align: center;
+				font-size: 0.28rem;
+				color: #666;
+			}
+			.main-nav a img{
+				margin: 0.1rem auto;
+				display: block;
+				width: 0.8rem;
+			}
+			.gifts{
+				width: 100%;
+				height: 2.4rem;
+				display: flex;
+				justify-content: space-around;
+			}
+			.gifts .gift1{
+				width: 3.58rem;
+				height: inherit;
+				display: flex;
+				align-items: center;
+				text-align: center;
+			}
+			.gifts a{
+				display: inline-block;
+			}
+			.gifts .gift1 img{
+				display: block;
+				width: 3.58rem;
+			}
+			.gifts .gift2{
+				width: 1.93rem;
+				height: inherit;
+				text-align: center;
+				display: flex;
+				align-items: center;
+				border-left: 1px solid #e3e3e3;
+				border-right: 1px solid #e3e3e3;
+			}
+			.gifts .gift2 img{
+				display: block;
+				width: 1.91rem;
+			}
+			.gifts .gift3{
+				width: 1.82rem;
+				height: inherit;
+				display: flex;
+				text-align: center;
+				align-items: center;
+			}
+			.gifts .gift3 img{
+				display: block;
+				width: 1.82rem;
+			}
+			.bottom-nav{
+				width: 100%;
+				height: 1.1rem;
+				position: fixed;
+				bottom: 0rem;
+				left: 0rem;
+				display: flex;
+				justify-content: space-around;
+				background-color: #D51433;
+			}
+			.bottom-nav a{
+				display: inline-block;
+				flex: 1;
+				height: inherit;
+			}
+			.bottom-nav a img{
+				display: block;
+				width: 1rem;
+				margin: 0.2rem auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="searchBar clear">
+			<div class="menu">
+				<i class="fa fa-list"></i>
+			</div>
+			<div class="search">
+				<div class="demo clear">
+				<div class="jd">
+					<img src="img/jd/jd.png"/></div>
+				<div class="lens">
+					<img src="img/jd/search.png"/>
+				</div>
+				</div>
+				<input type="search" name="search" id="search" placeholder="请输入商品名称" />
+			</div>
+			<a href="javascript:location.assign('jdLogin.html')" >
+			<div class="login">
+				登录
+			</div>
+			</a>
+		</div>
+		<div class="main-nav">
+			<div class="box1">
+				<a href="#">
+					<img src="img/jd/01.png"/>
+					<span>京东超市</span>
+				</a>
+				<a href="#">
+					<img src="img/jd/02.png"/>
+					<span>海囤全球</span>
+				</a>
+				<a href="#">
+					<img src="img/jd/03.png"/>
+					<span>京东服饰</span>
+				</a>
+				<a href="#">
+					<img src="img/jd/04.png"/>
+					<span>京东生鲜</span>
+				</a>
+				<a href="#">
+					<img src="img/jd/05.png"/>
+					<span>京东到家</span>
+				</a>
+			</div>
+			<div class="box2">
+				<a href="#">
+					<img src="img/jd/06.png"/>
+					<span>充值缴费</span>
+				</a>
+				<a href="#">
+					<img src="img/jd/07.png"/>
+					<span>9.9元拼</span>
+				</a>
+				<a href="#">
+					<img src="img/jd/08.png"/>
+					<span>领券</span>
+				</a>
+				<a href="#">
+					<img src="img/jd/09.png"/>
+					<span>赚钱</span>
+				</a>
+				<a href="#">
+					<img src="img/jd/10.png"/>
+					<span>全部</span>
+				</a>
+			</div>
+		</div>
+		<div class="gifts">
+			<div class="gift1">
+				<a href="#">
+					<img src="img/jd/pic1.jpg"/>
+				</a>
+			</div>
+			<div class="gift2">
+				<a href="#">
+					<img src="img/jd/pic2.jpg"/>
+				</a>
+			</div>
+			<div class="gift3">
+				<a href="#">
+					<img src="img/jd/pic3.jpg"/>
+				</a>
+			</div>
+		</div>
+		<div class="bottom-nav">
+			<a href="#">
+				<img src="img/jd/bt1.png"/>
+			</a>
+			<a href="#">
+				<img src="img/jd/bt2.png"/>
+			</a>
+			<a href="#">
+				<img src="img/jd/bt3.png"/>
+			</a>
+			<a href="#">
+				<img src="img/jd/bt4.png"/>
+			</a>
+			<a href="#">
+				<img src="img/jd/bt5.png"/>
+			</a>
+		</div>
+	</body>
+</html>

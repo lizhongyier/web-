@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.css"/>
+		<style type="text/css">
+			html{
+				font-size: calc(100vw/7.5);
+			}
+			body{
+				margin: 0px;
+				font-size: 0.32em;
+			}
+			a{
+				text-decoration: none;
+			}
+			.clear:after{
+				content: "";
+				display: block;
+				clear: both;
+			}
+			.top{
+				width: 100%;
+				height: 1.1rem;
+				position: fixed;
+				top: 0px;
+				left: 0px;
+			}
+			.top .back{
+				margin: 0 0.1rem;
+				position: absolute;
+				top: 0.4rem;
+				left: 0.1rem;
+			}
+			.top .title{
+				height: inherit;
+				line-height: 1.1rem;
+				text-align: center;
+				font-size: 0.36rem;
+				color: #333;
+			}
+			.user{
+				width: 100%;
+				margin-top: 1.2rem;
+				padding: 0.5rem 0.25rem 0rem;
+				height: 1.5rem;
+				box-sizing: border-box;
+			}
+			.user input::-webkit-input-placeholder{
+				font-size: 0.28rem;
+				color: #999;
+			}
+			.user input{
+				margin: 0rem;
+				width: 100%;
+				height: 0.9rem;
+				outline: none;
+				border-width: 0rem;
+				border-bottom: 1px solid #E3E3E3;
+			}
+			.pwd{
+				width: 100%;
+				margin-top: 0.05rem;
+				padding: 0.5rem 0.25rem 0rem;
+				height: 1.5rem;
+				box-sizing: border-box;
+			}
+			.pwd .pwdbox{
+				width: 100%;
+				display: flex;
+				border-bottom: 1px solid #E3E3E3;
+			}
+			
+			.pwd .pwdbox input {
+				flex: 1;
+				height: 0.9rem;
+				border: 0rem;
+				outline: none;
+			}
+			.pwd .pwdbox input::-webkit-input-placeholder{
+				font-size: 0.28rem;
+				color: #999;
+			} 
+			.pwd .pwdbox #eye{
+				display: inline-block;
+				width: 0.45rem;
+				height: 0.9rem;
+				background-image: url(img/eye-close.png);
+				background-size: contain;
+				background-position: left center; 
+				background-repeat: no-repeat;
+			}
+			.pwd .pwdbox #forget{
+				display: inline-block;
+				width: 1rem;
+				height: 0.6rem;
+				text-align: center;
+				line-height: 0.6rem;
+				margin: 0.1rem;
+				font-size: 0.2rem;
+				border-left: 1px solid #e3e3e3;
+			}
+			.tipbox{
+				width: 100%;
+				margin-top: 0.1rem;
+				padding: 0 0.25rem;
+				color: #ff2000;
+				display: none;
+			}
+			.login,.quick-login{
+				width: 100%;
+				margin-top: 0.2rem;
+				padding: 0 0.25rem;
+				height: 1rem;
+				box-sizing: border-box;
+			}
+			.login a,.quick-login a{
+				display: block;
+				width: 100%;
+				height: inherit;
+				text-align: center;
+				line-height: 1rem;
+				border-radius: 0.5rem;
+				color: #fff;
+				font-size: 0.36rem;
+				background-image: linear-gradient(90deg,#fab3b3,#ffbcb3 73%,#ffcaba);
+			}
+			.quick-login a{
+				background-image: none;
+				color: #ff2000;
+				border: 1px solid #ff2000;
+			}
+			.login a.bgchange{
+				background-image: linear-gradient(90deg,#f10000,#ff2000 73%,#ff4f18)!important;
+			}
+			.verify{
+				width: 100%;
+				margin-top: 0.1rem;
+				padding: 0 0.25rem;
+				height: 0.5rem;
+				box-sizing: border-box;
+			}
+			.verify .mge,.verify .phone{
+				float: left;
+				width: 2rem;
+				line-height: 0.5rem;
+				font-size: 0.24rem;
+				color: #999;
+			}
+			.verify .phone{
+				float: right;
+			}
+			.other{
+				width: 100%;
+				margin-top: 0.3rem;
+				padding: 0 0.25rem;
+				height: 0.5rem;
+				line-height: 0.5rem;
+				font-size: 0.28rem;
+				color: #999;
+				box-sizing: border-box;
+				display: flex;
+				align-items: center;
+			}
+			.other span{
+				flex: 1;
+				margin: 0px 5px;
+				border-top: 1px solid #999;
+			}
+			.logo{
+				width: 100%;
+				margin-top: 0.2rem;
+				padding: 0 0.25rem;
+				height: 1.1rem;
+				display: flex;
+			}
+			.logo>div{
+				display: block;
+				width: 50%;
+			}
+			.logo div img{
+				display: block;
+				width: 0.7rem;
+				margin: 0 auto;
+			}
+			.logo .qq a,.logo .wechat a{
+				width: 1rem;
+				height: inherit;
+				text-align: center;
+				float: right;
+				color: #999;
+			}
+			.logo .wechat a{
+				float: left;
+			}
+			.tips{
+				width: 100%;
+				margin-top: 0.2rem;
+				padding: 0 0.25rem;
+				height: 0.5rem;
+				color: #666;
+				font-size: 0.28rem;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="top clear">
+			<div class="back">
+				<a href="javascript:location.assign('JDindex.html')" style="color: #333;">
+				<i class="fa fa-chevron-left"></i>
+				</a>
+			</div>
+			<div class="title">
+				京东登录
+			</div>
+		</div>	
+			<div class="user">
+				<input type="text" name="user" id="user" value="" placeholder="用户名/邮箱/已验证手机" />
+			</div>
+			<div class="pwd">
+				<div class="pwdbox">
+				<input type="password" name="pwd" id="pwd" value="" placeholder="请输入密码"/>
+				<span id="eye">
+				</span>
+				<span id="forget">
+					忘记密码
+				</span>
+				</div>
+			</div>
+		<div class="tipbox">
+			账号名或密码错误！
+		</div>
+		<div class="login">
+			<a href="#">登录</a>
+		</div>
+		<div class="quick-login">
+			<a href="#">
+				一键登录
+			</a>
+		</div>
+		<div class="verify clear">
+			<div class="mge">短信验证码登录</div>
+			<div class="phone">手机快速注册</div>
+		</div>
+		<div class="other">
+			<span></span>其他登录方式<span></span>
+		</div>
+		<div class="logo">
+			<div class="qq">
+				<a href="#">
+				<img src="img/QQ.png"/>
+				<span>QQ</span>
+				</a>
+			</div>
+			<div class="wechat">
+				<a href="#">
+				<img src="img/wechat.png"/>
+				<span>微信</span>
+				</a>
+			</div>
+		</div>
+		<div class="tips">
+			登录即代表您已同意<a href="#">京东隐私政策</a>
+		</div>
+		
+		
+		
+		
+		
+		<script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var user=$("#user");
+				var pwd=$("#pwd");
+				var login=$(".login a");
+				var tips=$(".tipbox");
+				var eye=$("#eye");
+				var pwd=$(".pwdbox input")
+				pwd.on("input",function(e){
+					console.log(e.target.value)
+					console.log(user.val())
+					if (user.val().length>5&&e.target.value.length>5) {
+					login.addClass("bgchange");
+					tips.css("display","none")
+				} else{
+					tips.css("display","block")
+					login.removeClass("bgchange")
+				}
+			})
+				eye.click(function(){
+					console.log($(this).css("background-image"))
+					console.log(pwd.attr("type"))
+					if (pwd.attr("type")=="password") {
+						pwd.attr("type","text");
+						eye.css("background-image","url(img/eye-open.png)")
+					} else{
+						pwd.attr("type","password");
+						eye.css("background-image","url(img/eye-close.png)")
+					}
+				})
+				
+				
+			})
+			
+			
+			
+		</script>
+	</body>
+</html>

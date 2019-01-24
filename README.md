@@ -6,3 +6,5 @@
 <br/>#第五次作业:https://lizhongyier.github.io/web-/L5s/chart
 <br/>#第五次作业:https://lizhongyier.github.io/web-/L5s/nav
 <br/>#第六次作业:https://lizhongyier.github.io/web-/L6s/人物
+<br/>#第七次作业:https://lizhongyier.github.io/web-/L7s/JDindex
+<br/>#第七次作业:https://lizhongyier.github.io/web-/L7s/jdLogin

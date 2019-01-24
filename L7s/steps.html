@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 300px;
+				height: 300px;
+				border: 1px solid blueviolet;
+				margin: 50px auto;
+				-webkit-animation-name: changebg;
+				-webkit-animation-duration: 5s;
+				-webkit-animation-iteration-count: infinite;
+				/*一个阶段分几步走，下面的step都是陡变*/
+				-webkit-animation-timing-function: steps(1);
+				/*跳过第一步*/
+				/*-webkit-animation-timing-function: step-start;*/
+				/*跳过最后一步*/
+				/*-webkit-animation-timing-function: step-end;*/
+
+			}
+			@-webkit-keyframes changebg{
+				from{
+					background-color: red;
+				}
+				50%{
+					background-color: green;
+				}
+				to{
+					background-color: blue;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			
+		</div>
+		
+	</body>
+</html>

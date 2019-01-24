@@ -279,6 +279,19 @@
 				var tips=$(".tipbox");
 				var eye=$("#eye");
 				var pwd=$(".pwdbox input")
+				
+				user.on("input",function(e){
+					console.log(e.target.value)
+					console.log(user.val())
+					if (user.val().length>5&&e.target.value.length>5) {
+					login.addClass("bgchange");
+					tips.css("display","none")
+				} else{
+					tips.css("display","block")
+					login.removeClass("bgchange")
+				}
+			})
+				
 				pwd.on("input",function(e){
 					console.log(e.target.value)
 					console.log(user.val())

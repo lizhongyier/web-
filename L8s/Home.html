@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/weui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+		<title></title>
+		<style type="text/css">
+			.search-page {
+				position: fixed;
+				width: 100%;
+				top: 0px;
+				left: 0px;
+			}
+			
+			.search-page.show {
+				position: fixed;
+				top: 0px;
+				left: 0px;
+				right: 0px;
+				bottom: 0px;
+				z-index: 9999;
+				background-color: #fff;
+			}
+			
+			.weui-tabbar {
+				position: fixed;
+			}
+			
+			.swiper-container {
+				margin-top: 40px;
+			}
+			
+			.swiper-container a {
+				display: block;
+			}
+			
+			.swiper-container a img {
+				width: 100%;
+			}
+			
+			.items {
+				padding: 0px 10px;
+				box-sizing: border-box;
+			}
+			
+			.items a {
+				display: block;
+			}
+			
+			.items .placeholder {
+				text-align: center;
+				padding: 10px 0px;
+				box-sizing: border-box;
+			}
+			
+			.items .placeholder img {
+				width: 50%;
+				box-sizing: border-box;
+			}
+			
+			.items .placeholder p {
+				font-size: 12px;
+				margin: 0px;
+				padding: 0px;
+				color: #666;
+			}
+			
+			.main-part {
+				padding: 0px 10px;
+				box-sizing: border-box;
+			}
+			
+			.main-part .placeholder a {
+				display: block;
+				margin: 0 3px;
+			}
+			
+			.main-part .placeholder a img {
+				width: 100%;
+			}
+			
+			.courses-list h3 {
+				padding: 18px 18px 4px;
+			}
+			
+			.courses-list .weui-media-box__hd {
+				width: 70px;
+				height: 90px;
+			}
+			
+			.courses-list h4 {
+				display: -webkit-box;
+				overflow: hidden;
+				-webkit-box-orient: vertical;
+				text-overflow: ellipsis;
+				white-space: normal;
+				-webkit-line-clamp: 2;
+				color: #333;
+				font-weight: 700;
+			}
+			
+			.courses-list .remark {
+				font-size: 14px;
+				color: #666;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+			
+			.courses-list .live-name {
+				color: #999;
+				font-size: 12px;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+			
+			.courses-list .other-info {
+				color: #b2b2b2;
+				font-size: 12px;
+			}
+			
+			.courses-list .price .origin {
+				text-decoration: line-through;
+			}
+			
+			.courses-list .price .current {
+				color: #f73657;
+				margin-left: 2px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--https://m.qlchat.com/wechat/page/recommend-->
+
+		<div class="search-page">
+			<!-- 搜索框 -->
+			<div class="weui-search-bar" id="searchBar">
+				<form class="weui-search-bar__form">
+					<div class="weui-search-bar__box">
+						<i class="weui-icon-search"></i>
+						<input type="search" class="weui-search-bar__input" id="searchInput" placeholder="搜索" required="">
+						<a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
+					</div>
+					<label class="weui-search-bar__label" id="searchText" style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">
+                    <i class="weui-icon-search"></i>
+                    <span>搜索</span>
+                </label>
+				</form>
+				<a href="javascript:" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
+			</div>
+			<!-- 热门搜索&推荐 -->
+			<div class="recomend" style="width: 100%;height: 120px;background-color: green;display: none;color: #FFFFFF;">
+				商品推荐
+			</div>
+			<!-- 搜索结果 -->
+			<div class="weui-cells searchbar-result" id="searchResult" style=" display: none;">
+				<div class="weui-cell weui-cell_access">
+					<div class="weui-cell__bd weui-cell_primary">
+						<p>实时搜索文本</p>
+					</div>
+				</div>
+				<div class="weui-cell weui-cell_access">
+					<div class="weui-cell__bd weui-cell_primary">
+						<p>实时搜索文本</p>
+					</div>
+				</div>
+				<div class="weui-cell weui-cell_access">
+					<div class="weui-cell__bd weui-cell_primary">
+						<p>实时搜索文本</p>
+					</div>
+				</div>
+				<div class="weui-cell weui-cell_access">
+					<div class="weui-cell__bd weui-cell_primary">
+						<p>实时搜索文本</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Swiper -->
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<a href="#">
+						<img src="img/1.png" />
+					</a>
+				</div>
+				<div class="swiper-slide">
+					<a href="#">
+						<img src="img/2.png" />
+					</a>
+				</div>
+				<div class="swiper-slide">
+					<a href="#">
+						<img src="img/3.jpg" />
+					</a>
+				</div>
+
+			</div>
+			<!-- Add Pagination -->
+			<div class="swiper-pagination"></div>
+		</div>
+
+		<div class="weui-flex items">
+			<div class="weui-flex__item">
+				<div class="placeholder">
+					<a href="#"><img src="img/pic1.png" />
+						<p>限时低价</p>
+					</a>
+				</div>
+			</div>
+			<div class="weui-flex__item">
+				<div class="placeholder">
+					<a href="#"><img src="img/pic2.png" />
+						<p>大师课</p>
+					</a>
+				</div>
+			</div>
+			<div class="weui-flex__item">
+				<div class="placeholder">
+					<a href="#"><img src="img/pic3.png" />
+						<p>VIP会员</p>
+					</a>
+				</div>
+			</div>
+			<div class="weui-flex__item">
+				<div class="placeholder">
+					<a href="#"><img src="img/pic4.png" />
+						<p>免费专区</p>
+					</a>
+				</div>
+			</div>
+			<div class="weui-flex__item">
+				<div class="placeholder">
+					<a href="#"><img src="img/pic5.png" />
+						<p>课程优惠券</p>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="weui-flex main-part">
+			<div class="weui-flex__item">
+				<div class="placeholder">
+					<a href="#"><img src="img/cat1.png" /></a>
+				</div>
+			</div>
+			<div class="weui-flex__item">
+				<div class="placeholder">
+					<a href="#"><img src="img/cat2.png" /></a>
+				</div>
+			</div>
+			<div class="weui-flex__item">
+				<div class="placeholder">
+					<a href="#"><img src="img/cat3.png" /></a>
+				</div>
+			</div>
+			<div class="weui-flex__item">
+				<div class="placeholder">
+					<a href="#"><img src="img/cat4.png" /></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="weui-flex main-part">
+			<div class="weui-flex__item">
+				<div class="placeholder">
+					<a href="#"><img src="img/cat5.png" /></a>
+				</div>
+			</div>
+			<div class="weui-flex__item">
+				<div class="placeholder">
+					<a href="#"><img src="img/cat6.png" /></a>
+				</div>
+			</div>
+			<div class="weui-flex__item">
+				<div class="placeholder">
+					<a href="#"><img src="img/cat7.png" /></a>
+				</div>
+			</div>
+			<div class="weui-flex__item">
+				<div class="placeholder">
+					<a href="#"><img src="img/cat8.png" /></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="weui-panel courses-list">
+			<h3>名师讲堂</h3>
+			<div class="weui-panel__bd">
+				<a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+					<div class="weui-media-box__hd">
+						<img src="img/teacher.jpg" class="weui-media-box__thumb" />
+					</div>
+					<div class="weui-media-box__bd">
+						<h4 class="weui-media-box__title">2019小程序赚钱攻略 • 零基础搭建、引爆、变现你的小程序</h4>
+						<div class="remark">吴天 · 微信公开课现场分享嘉宾</div>
+						<div class="other-info">
+							<p class="pull-left"><span class="learn-num">5.1万次学习 | </span><span>13课</span></p>
+							<div class="price pull-right">
+								<span>
+                        			<span class="origin">¥99</span>
+								<span class="current">¥69</span>
+								</span>
+							</div>
+						</div>
+					</div>
+				</a>
+				
+				<a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+					<div class="weui-media-box__hd">
+						<img src="img/teacher.jpg" class="weui-media-box__thumb" />
+					</div>
+					<div class="weui-media-box__bd">
+						<h4 class="weui-media-box__title">2019小程序赚钱攻略 • 零基础搭建、引爆、变现你的小程序</h4>
+						<div class="remark">吴天 · 微信公开课现场分享嘉宾</div>
+						<div class="other-info">
+							<p class="pull-left"><span class="learn-num">5.1万次学习 | </span><span>13课</span></p>
+							<div class="price pull-right">
+								<span>
+                        			<span class="origin">¥99</span>
+								<span class="current">¥69</span>
+								</span>
+							</div>
+						</div>
+					</div>
+				</a>
+				
+				<a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+					<div class="weui-media-box__hd">
+						<img src="img/teacher.jpg" class="weui-media-box__thumb" />
+					</div>
+					<div class="weui-media-box__bd">
+						<h4 class="weui-media-box__title">2019小程序赚钱攻略 • 零基础搭建、引爆、变现你的小程序</h4>
+						<div class="remark">吴天 · 微信公开课现场分享嘉宾</div>
+						<div class="other-info">
+							<p class="pull-left"><span class="learn-num">5.1万次学习 | </span><span>13课</span></p>
+							<div class="price pull-right">
+								<span>
+                        			<span class="origin">¥99</span>
+								<span class="current">¥69</span>
+								</span>
+							</div>
+						</div>
+					</div>
+				</a>
+				
+				<a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+					<div class="weui-media-box__hd">
+						<img src="img/teacher.jpg" class="weui-media-box__thumb" />
+					</div>
+					<div class="weui-media-box__bd">
+						<h4 class="weui-media-box__title">2019小程序赚钱攻略 • 零基础搭建、引爆、变现你的小程序</h4>
+						<div class="remark">吴天 · 微信公开课现场分享嘉宾</div>
+						<div class="other-info">
+							<p class="pull-left"><span class="learn-num">5.1万次学习 | </span><span>13课</span></p>
+							<div class="price pull-right">
+								<span>
+                        			<span class="origin">¥99</span>
+								<span class="current">¥69</span>
+								</span>
+							</div>
+						</div>
+					</div>
+				</a>
+				
+				<a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+					<div class="weui-media-box__hd">
+						<img src="img/teacher.jpg" class="weui-media-box__thumb" />
+					</div>
+					<div class="weui-media-box__bd">
+						<h4 class="weui-media-box__title">2019小程序赚钱攻略 • 零基础搭建、引爆、变现你的小程序</h4>
+						<div class="remark">吴天 · 微信公开课现场分享嘉宾</div>
+						<div class="other-info">
+							<p class="pull-left"><span class="learn-num">5.1万次学习 | </span><span>13课</span></p>
+							<div class="price pull-right">
+								<span>
+                        			<span class="origin">¥99</span>
+								<span class="current">¥69</span>
+								</span>
+							</div>
+						</div>
+					</div>
+				</a>
+				
+			</div>
+		</div>
+			
+		<!-- 底部版权 -->
+		<div class="weui-footer" style="margin-top: 20px; padding-bottom: 100px;">
+			<p class="weui-footer__links">
+				<a href="javascript:void(0);" class="weui-footer__link">底部链接</a>
+				<a href="javascript:void(0);" class="weui-footer__link">底部链接</a>
+			</p>
+			<p class="weui-footer__text">Copyright © 2008-2016 weui.io</p>
+		</div>
+
+		
+		<!--底部导航-->
+		<div class="weui-tabbar">
+			<a href="javascript:;" class="weui-tabbar__item weui-bar__item_on">
+				<span style="display: inline-block;position: relative;">
+                        <i class="fa fa-home weui-tabbar__icon"></i>
+                        <span class="weui-badge" style="position: absolute;top: -2px;right: -13px;">8</span>
+				</span>
+				<p class="weui-tabbar__label">首页</p>
+			</a>
+			<a href="javascript:;" class="weui-tabbar__item">
+				<i class="fa fa-compass weui-tabbar__icon"></i>
+				<p class="weui-tabbar__label">发现</p>
+			</a>
+			<a href="javascript:;" class="weui-tabbar__item">
+				<span style="display: inline-block;position: relative;">
+                        <i class="fa fa-book weui-tabbar__icon"></i>
+                        <span class="weui-badge weui-badge_dot" style="position: absolute;top: 0;right: -6px;"></span>
+				</span>
+				<p class="weui-tabbar__label">我的课程</p>
+			</a>
+			<a href="javascript:location.assign('user.html');" class="weui-tabbar__item">
+				<i class="fa fa-user weui-tabbar__icon"></i>
+				<p class="weui-tabbar__label">个人中心</p>
+			</a>
+		</div>
+
+		<script src="js/weui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/zepto_1.1.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//						weui.searchBar('#searchBar');
+
+			$(function() {
+				var $searchBar = $('#searchBar'),
+					$searchResult = $('#searchResult'),
+					$searchText = $('#searchText'),
+					$searchInput = $('#searchInput'),
+					$searchClear = $('#searchClear'),
+					$searchCancel = $('#searchCancel');
+
+				function hideSearchResult() {
+					$searchResult.hide();
+					$searchInput.val('');
+				}
+
+				function cancelSearch() {
+					hideSearchResult();
+					$searchBar.removeClass('weui-search-bar_focusing');
+					$searchText.show();
+					//取消显示首页，隐藏搜索页面
+
+					console.log("取消搜索")
+					$(".search-page").removeClass("show");
+					$("body").css("overflow", "auto");
+					$(".recomend").css("display", "none")
+				}
+
+				$searchText.on('click', function() {
+					$searchBar.addClass('weui-search-bar_focusing');
+					$searchInput.focus();
+					//获取焦点后显示搜索页，显示搜索页面
+					$(".search-page").addClass("show");
+					$("body").css("overflow", "hidden");
+				});
+				//注意下面写法很奇特!!
+				$searchInput
+					.on('blur', function() {
+						if(!this.value.length) cancelSearch();
+					})
+					.on('input', function() {
+						if(this.value.length) {
+							$searchResult.show();
+							$(".recomend").css("display", "block")
+						} else {
+							$searchResult.hide();
+							$(".recomend").css("display", "none")
+						}
+					});
+				$searchClear.on('click', function() {
+					hideSearchResult();
+					$searchInput.focus();
+					$(".recomend").css("display", "none")
+				});
+				$searchCancel.on('click', function(e) {
+					e.preventDefault();
+					cancelSearch();
+					$searchInput.blur();
+				});
+				//底部导航切换
+				$('.weui-tabbar__item').on('click', function() {
+					$(this).addClass('weui-bar__item_on').siblings('.weui-bar__item_on').removeClass('weui-bar__item_on');
+				});
+				//swiper初始化
+				var swiper = new Swiper('.swiper-container', {
+					pagination: {
+						el: '.swiper-pagination',
+					},
+					loop: true,
+					autoplay: true
+				});
+
+			});
+		</script>
+	</body>
+
+</html>

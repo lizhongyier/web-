@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/weui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+		<title></title>
+		<style type="text/css">
+			body {
+				margin: 0px;
+				padding: 0px;
+				line-height: normal;
+			}
+			
+			.head {
+				width: 100%;
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			.head .banner {
+				width: 100%;
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			.head .banner img {
+				width: inherit;
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			.head .sale {
+				flex-shrink: 0;
+				color: #f63657;
+				margin-right: .213333rem;
+				font-weight: 700;
+				float: left;
+				font-size: 46px;
+			}
+			
+			.head .sale b {
+				font-size: 24px;
+			}
+			
+			.head .specials-count-down {
+				width: 100%;
+				height: 60px;
+				margin: -3px 0px 0px 0px;
+				padding: 0px;
+				display: flex;
+				align-items: center;
+				background: url(img/course1.png) no-repeat left top;
+				background-size: 100% 100%;
+				box-sizing: border-box;
+			}
+			
+			.head .price-box {
+				list-style-type: none;
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+				color: #f63657;
+			}
+			
+			.head .price-box .price {
+				font-size: 12px;
+				text-decoration: line-through;
+				box-sizing: border-box;
+			}
+			
+			.head .price-box .title {
+				font-size: 14px;
+				display: block;
+				width: 60px;
+				height: 16px;
+				text-align: center;
+				line-height: 16px;
+				border: 1px solid #f63657;
+				border-radius: 5px;
+				box-sizing: border-box;
+			}
+			
+			.head .slogan {
+				flex: 1;
+				height: 30px;
+				background: url(img/course2.png) no-repeat center right/contain;
+				margin-right: 20px;
+				box-sizing: border-box;
+			}
+			
+			.channel {
+				width: 100%;
+				height: 165px;
+				padding: 22px 22px 0px;
+				box-sizing: border-box;
+			}
+			
+			.channel .title {
+				font-size: 18px;
+				color: #333;
+				font-weight: 700;
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				text-overflow: ellipsis;
+				-webkit-line-clamp: 2;
+				overflow: hidden;
+				white-space: normal;
+				line-height: normal!important;
+			}
+			
+			.channel .channel-tip {
+				width: 100%;
+				display: flex;
+				height: 16px;
+				font-size: 12px;
+				margin-top: 15px;
+				color: #b2b2b2;
+				;
+				align-items: center;
+				-webkit-box-pack: justify;
+				justify-content: space-between;
+				flex-wrap: wrap;
+			}
+			
+			.channel .channel-tip>div {
+				flex: 1;
+				word-break: break-all;
+			}
+			
+			.channel .member {
+				width: 100%;
+				height: 40px;
+				margin-top: 15px;
+				display: flex;
+				align-items: center;
+				font-size: 14px;
+				border: 1px solid #efe2d7;
+				border-radius: 4px;
+				background: #fffbf8;
+				font-weight: 400;
+				color: #a77959;
+				word-break: break-all;
+			}
+			
+			.weui-navbar__item.weui-bar__item_on {
+				border-bottom: 1.5px solid #f63657;
+			}
+			
+			.weui-tab__panel {
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			.weui-tab__panel li {
+				width: 100%;
+			}
+			
+			.weui-tab__panel .weui-tab__panel1 .back-tuition-label {
+				margin-top: 10px;
+				font-size: 14px;
+				color: #333;
+			}
+			
+			.weui-tab__panel .weui-tab__panel1 .back-tuition-label .title {
+				font-weight: 700;
+				text-align: center;
+				line-height: 2em;
+			}
+			
+			.weui-tab__panel .weui-tab__panel1 .back-tuition-label .tip {
+				text-align: center;
+				line-height: 1.5em;
+			}
+			
+			.weui-tab__panel .weui-tab__panel1 .process-container {
+				width: 100%;
+				display: flex;
+				padding: 0px 20px;
+				height: 60px;
+				align-items: center;
+				justify-content: space-around;
+				font-size: 18px;
+				color: #F63657;
+				margin: 10px auto;
+				box-sizing: border-box;
+			}
+			
+			.weui-tab__panel .weui-tab__panel1 .process-container .icon {
+				display: block;
+				width: 54px;
+				height: 54px;
+				margin: 0px 10px;
+			}
+			
+			.weui-tab__panel .weui-tab__panel1 .process-container .fa {
+				margin-top: -10px;
+			}
+			
+			.weui-tab__panel .weui-tab__panel1 .p-intro-section-title {
+				width: 100%;
+				padding: 0px 15px;
+				box-sizing: border-box;
+				display: flex;
+				align-items: center;
+			}
+			
+			.weui-tab__panel .weui-tab__panel1 .p-intro-section-title p {
+				font-size: 16px;
+				font-weight: 900;
+				width: 50%;
+			}
+			
+			.weui-tab__panel .weui-tab__panel1 .p-intro-section-title .js_course_intro_dom {
+				width: 50%;
+				font-size: 14px;
+				line-height: 1.5em;
+				color: #fff;
+				text-align: right;
+			}
+			
+			.weui-tab__panel .weui-tab__panel1 .p-intro-section-title .tips {
+				display: inline-block;
+				background-color: #ffa200;
+				padding: 5px 10px;
+				line-height: 20px;
+				border-radius: 3px 6px 6px 3px;
+				border-right: 1px dashed #fff;
+			}
+			
+			.weui-tab__panel .weui-tab__panel1 .p-intro-section-title .price {
+				display: inline-block;
+				background-color: #ffa200;
+				padding: 5px 10px;
+				line-height: 20px;
+				border-radius: 6px 3px 3px 6px;
+			}
+			
+			.weui-tab__panel .weui-tab__panel1 .ad {
+				width: 100%;
+				padding: 15px;
+				box-sizing: border-box;
+			}
+			
+			.weui-tab__panel .weui-tab__panel1 .ad img {
+				display: block;
+				width: 100%;
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			.weui-tab__panel .weui-tab__panel1 .p-intro-section {
+				width: 100%;
+				display: flex;
+				padding: 15px;
+				border-top: 1px solid #EEEEEE;
+				border-bottom: 1px solid #EEEEEE;
+				align-items: center;
+				box-sizing: border-box;
+			}
+			
+			.weui-tab__panel .weui-tab__panel1 .p-intro-section .content {
+				width: 70%;
+				display: flex;
+				align-items: center;
+			}
+			
+			.weui-tab__panel .weui-tab__panel1 .p-intro-section .content .info-desc {
+				margin-left: 5px;
+				color: #333;
+				line-height: 1.5em;
+			}
+			
+			.weui-tab__panel .weui-tab__panel1 .p-intro-section .content .info-desc p {
+				font-size: 16px;
+				font-weight: 700;
+			}
+			
+			.weui-tab__panel .weui-tab__panel1 .p-intro-section .content .info-desc .desc-item {
+				font-size: 14px;
+				margin: 0px 5px;
+			}
+			
+			.weui-tab__panel .weui-tab__panel1 .p-intro-section .content .info-desc .desc-item span {
+				font-weight: 700;
+			}
+			
+			.weui-tab__panel .weui-tab__panel1 .p-intro-section .follow-btn {
+				border: 1px solid #F43530;
+				color: #F63657;
+				padding: 3px 5px;
+				font-size: 14px;
+				text-align: center;
+				border-radius: 12px;
+			}
+			
+			.weui-tab__panel .weui-tab__panel1 .weui-panel__bd {
+				width: 100%;
+				padding: 15px;
+				box-sizing: border-box;
+			}
+			
+			.weui-tab__panel .weui-tab__panel1 .weui-panel__bd h3 {
+				color: #333;
+				line-height: 75px;
+				font-size: 16px;
+				font-weight: 700;
+			}
+			
+			.weui-tab__panel .weui-tab__panel1 .weui-panel__bd .weui-media-box__bd h4 {
+				line-height: 1.2em;
+				overflow: hidden;
+				display: -webkit-box;
+				white-space: normal;
+				-webkit-box-orient: vertical;
+				text-overflow: ellipsis;
+				-webkit-line-clamp: 2;
+				color: #333;
+				font-weight: 700;
+			}
+			
+			.weui-tab__panel .weui-tab__panel1 .weui-panel__bd .weui-media-box__bd .other-info {
+				line-height: 2.5em;
+				font-size: 14px;
+			}
+			
+			.weui-tab__panel .weui-tab__panel2 {
+				padding: 15px;
+				box-sizing: border-box;
+			}
+			
+			.weui-tab__panel .weui-tab__panel2 .weui-cell {
+				border-top: 0px!important;
+			}
+			
+			.weui-tab__panel .weui-tab__panel2 .weui-cell .title {
+				color: #333;
+				display: -webkit-box;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				-webkit-line-clamp: 2;
+				font-size: 16px;
+				font-weight: 700;
+				-webkit-box-orient: vertical;
+			}
+			
+			.weui-tab__panel .weui-tab__panel2 .weui-cell .desc {
+				width: 100%;
+				font-size: 12px;
+			}
+			
+			.weui-tab__panel .weui-tab__panel2 .weui-cell .desc .grow1 {
+				width: 60%;
+				color: #666;
+			}
+			
+			.weui-tab__panel .weui-tab__panel2 .weui-cell .desc .shrink {
+				width: 40%;
+				text-align: right;
+			}
+			
+			.weui-tab__panel .weui-tab__panel3 {
+				width: 100%;
+				padding: 15px;
+				box-sizing: border-box;
+			}
+			.weui-tab__panel .weui-tab__panel3 .scores{
+				width: 100%;
+				display: flex;
+			}
+			.weui-tab__panel .weui-tab__panel3 .scores .total-score{
+				flex: 1;
+				text-align: center;
+				color: #ff9400;
+				font-size: 14px;
+				border-right: 1px solid #999;
+			}
+			.weui-tab__panel .weui-tab__panel3 .scores .total-score .score{
+				font-family: arial;
+				font-size: 24px;
+				font-weight: 900;
+			}
+			.weui-tab__panel .weui-tab__panel3 .scores .total-score .desc{
+				color: #333;
+				line-height: 2.5em;
+			}
+			.weui-tab__panel .weui-tab__panel3 .scores .score-right{
+				flex: 2.5;
+				padding-left: 10px;
+				font-size: 12px;
+				color: #666;
+				box-sizing: border-box;
+			}
+			.weui-tab__panel .weui-tab__panel3 .scores .score-right .weui-progress span{
+				margin:2px 5px;
+			}
+			.quick-purchase {
+				width: 90%;
+				box-sizing: border-box;
+				line-height: 2.5em;
+				background-color: #F73657;
+				text-align: center;
+				position: fixed;
+				bottom: 0px;
+				left: 5%;
+				color: #fff;
+				font-size: 16px;
+				font-weight: 700;
+				font-family: "微软雅黑";
+				z-index: 999;
+				border-radius: 25px;
+			}
+			
+			.page__bd .list {
+				width: 50px;
+				height: 50px;
+				position: fixed;
+				z-index: 999;
+				bottom: 100px;
+				right: 10px;
+				border-radius: 50%;
+				background-color: rgba(255, 255, 255, .3);
+				font-size: 30px;
+				text-align: center;
+				line-height: 50px;
+				border: 1px solid #999;
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			.member-block {
+				width: 90%;
+				position: fixed;
+				bottom: 45px;
+				color: #91715a;
+				font-size: 12px;
+				left: 5%;
+				height: 35px;
+				line-height: 35px;
+				background-color: #ecd9cb;
+				border-radius: 10px 10px 0px 0px;
+				-webkit-box-align: center;
+				display: none;
+				box-sizing: border-box;
+			}
+			
+			.navbar .weui-navbar.lock {
+				position: fixed;
+				top: 0px;
+				left: 0px;
+			}
+			.weui-actionsheet,.weui-actionsheet__title,.weui-actionsheet__menu{
+				background-color: #eee!important;
+			}
+			.weui-actionsheet,.weui-actionsheet__title{
+				border-radius: 20px 20px 0px 0px;
+			}
+			.weui-actionsheet__cell{
+				width: 100%;
+				display: flex;
+				justify-content: flex-start;
+			}
+			.weui-actionsheet__cell>span{
+				flex: 1;
+				margin: 0px 8px;
+				text-align: center;
+			}
+			.weui-actionsheet__cell>span i{
+				display: inline-block;
+				width: 60px;
+				height: 60px;
+				text-align: center;
+				line-height: 60px;
+				border-radius: 50%;
+				background-color: #fff;
+				color: #666;
+				font-size: 24px;
+			}
+			#iosActionsheetCancel{
+				text-align: center;
+				display: flex;
+				justify-content: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="head">
+			<div class="banner">
+				<img src="img/course.jpg" />
+			</div>
+			<div class="specials-count-down">
+				<span class="sale"><b>￥</b>69</span>
+				<ul class="price-box">
+					<li>
+						<span class="price">￥99</span></li>
+					<li>
+						<span class="title">限时特价</span></li>
+				</ul>
+				<span class="slogan"></span>
+			</div>
+		</div>
+		<div class="channel">
+			<div class="title">
+				2019小程序赚钱全攻略：零基础搭建、引爆、变现你的小程序
+			</div>
+			<div class="channel-tip">
+				<div class="icon-one"><i class="fa fa-calendar-o" style="margin:0px 5px;"></i>已开14课 | 共15课</div>
+				<div class="icon-two"><i class="fa fa-play-circle-o" style="margin:0px 5px;"></i>5.2万次学习</div>
+				<div class="icon-three"><i class="fa fa-circle-o" style="margin:0px 5px;"></i>支持回听</div>
+			</div>
+			<div class="member">
+				<i style=" background: url(img/icon1.png) no-repeat center center/contain; display: block; width: 24px;height: 24px; margin: 0px 5px;"></i>
+				<p class="member-tips" style="width: 60%;">开通会员，该课仅需 <span class="member-price">¥39.2</span></p>
+				<div class="open-member-btn" style="width: 25%;text-align: right;">立即开通<i class="fa fa-chevron-right" style="font-size: 14px; margin-left: 5px;"></i></div>
+			</div>
+		</div>
+
+		<div class="page navbar js_show">
+			<div class="page__bd" style="height: 100%;">
+				<div class="weui-tab">
+					<div class="weui-navbar">
+						<div class="weui-navbar__item weui-bar__item_on">
+							课程介绍
+						</div>
+						<div class="weui-navbar__item">
+							听课列表
+						</div>
+						<div class="weui-navbar__item">
+							用户评价
+						</div>
+					</div>
+					<ul class="weui-tab__panel">
+						<li class=" weui-tab__panel1">
+							<div class="back-tuition-label">
+								<div class="title">组队学习返学费</div>
+								<div class="tip">报名后，邀请3位好友立返学费<b style="color: #f63657;">(最高￥49)</b></div>
+								<div class="process-container">
+									<span class="sign icon" style="background: url(img/icon2.png) no-repeat left top/contain;"></span>
+									<span class="fa fa-chevron-circle-right"></span>
+									<span class="friends icon" style="background: url(img/icon3.png) no-repeat left top/contain;"></span>
+									<span class="fa fa-chevron-circle-right"></span>
+									<span class="money icon" style="background: url(img/icon4.png) no-repeat left top/contain;"></span>
+								</div>
+							</div>
+							<div class="p-intro-section-title">
+								<p>简介</p>
+								<span class="js_course_intro_dom">
+										<span class="tips">购买时自动抵扣</span><span class="price">20</span>
+								</span>
+							</div>
+							<div class="ad">
+								<img src="img/ad1.jpg" />
+								<img src="img/ad2.jpg" />
+								<img src="img/ad4.jpg" />
+								<img src="img/ad3.jpg" />
+							</div>
+
+							<div class="p-intro-section">
+								<div class="content">
+									<span style=" display:inline-block;background: url(img/tie.png) no-repeat center bottom/cover; width: 50px;height: 50px;border-radius: 50%;"></span>
+									<div class="info-desc">
+										<p>每周一节职场课</p>
+										<div class="desc-item pull-left">
+											<span>1211</span>话题数
+										</div>
+										<div class="desc-item pull-right">
+											<span>58.2万</span>关注人数
+										</div>
+									</div>
+								</div>
+								<div class="follow-btn">
+									<i class="fa fa-plus" style="margin: 0px 5px;"></i>关注
+								</div>
+							</div>
+							<div class="weui-panel__bd">
+								<h3>猜你喜欢</h3>
+								<a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+									<div class="weui-media-box__hd" style="width: 120px;height: 90px;position: relative;">
+										<img style="width: inherit;" class="weui-media-box__thumb" src="img/teacher2.jpg" />
+										<p style="color: #333; position: absolute;bottom: 10px; left: 0px; font-size: 10px; width: 120px;height: 15px; background-color: #eee;line-height: 15px; text-align: center;">34.5万次学习</p>
+									</div>
+									<div class="weui-media-box__bd">
+										<h4 class="weui-media-box__title">阿里全球销售冠军，解密百万年薪的销售秘籍【赠价值39元实战沟通心法】</h4>
+										<p class="weui-media-box__desc">
+											<p style="font-size: 12px; color: #666;line-height: 1.5em; font-weight: 700;">每周一节职场课</p>
+											<div class="other-info">
+												<p class="pull-left" style="color: #999;"><span>34课</span></p>
+												<div class="price pull-right" style="color: #F43530;">
+													<span class="current">￥129</span>
+												</div>
+											</div>
+										</p>
+									</div>
+								</a>
+
+								<a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+									<div class="weui-media-box__hd" style="width: 120px;height: 90px;position: relative;">
+										<img style="width: inherit;" class="weui-media-box__thumb" src="img/teacher2.jpg" />
+										<p style="color: #333; position: absolute;bottom: 10px; left: 0px; font-size: 10px; width: 120px;height: 15px; background-color: #eee;line-height: 15px; text-align: center;">34.5万次学习</p>
+									</div>
+									<div class="weui-media-box__bd">
+										<h4 class="weui-media-box__title">阿里全球销售冠军，解密百万年薪的销售秘籍【赠价值39元实战沟通心法】</h4>
+										<p class="weui-media-box__desc">
+											<p style="font-size: 12px; color: #666;line-height: 1.5em; font-weight: 700;">每周一节职场课</p>
+											<div class="other-info">
+												<p class="pull-left" style="color: #999;"><span>34课</span></p>
+												<div class="price pull-right" style="color: #F43530;">
+													<span class="current">￥129</span>
+												</div>
+											</div>
+										</p>
+									</div>
+								</a>
+
+								<a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+									<div class="weui-media-box__hd" style="width: 120px;height: 90px;position: relative;">
+										<img style="width: inherit;" class="weui-media-box__thumb" src="img/teacher2.jpg" />
+										<p style="color: #333; position: absolute;bottom: 10px; left: 0px; font-size: 10px; width: 120px;height: 15px; background-color: #eee;line-height: 15px; text-align: center;">34.5万次学习</p>
+									</div>
+									<div class="weui-media-box__bd">
+										<h4 class="weui-media-box__title">阿里全球销售冠军，解密百万年薪的销售秘籍【赠价值39元实战沟通心法】</h4>
+										<p class="weui-media-box__desc">
+											<p style="font-size: 12px; color: #666;line-height: 1.5em; font-weight: 700;">每周一节职场课</p>
+											<div class="other-info">
+												<p class="pull-left" style="color: #999;"><span>34课</span></p>
+												<div class="price pull-right" style="color: #F43530;">
+													<span class="current">￥129</span>
+												</div>
+											</div>
+										</p>
+									</div>
+								</a>
+
+							</div>
+
+						</li>
+						<li class=" weui-tab__panel2" style="display: none;">
+							<h3>课程列表</h3>
+							<div class="weui-cells">
+
+								<a class="weui-cell" href="javascript:;">
+									<div class="weui-cell__hd">
+										<b style="width:20px;margin-right:5px;display:block; color: #999;">1</b>
+									</div>
+									<div class="weui-cell__bd">
+										<div class="title">【赛道抢占】抢占4大流量入口，让用户源源不断自然增长</div>
+										<div class="desc">
+											<div class="grow1 pull-left">
+												<span class="date" style="margin-right: 5px;">01月04日 19:30</span>
+												<span class="learn-num">7196次学习
+											</div>
+				                    	</div>
+				                    	<div class="shrink pull-right">
+				                    		<div class="label" style="border: 1px solid #F63657; padding: 1px 5px;border-radius: 15px; color: #F63657; font-size: 12px;">试听</div>
+				                    	</div>
+				                    </div>
+				            	</a>
+				            
+								<a class="weui-cell" href="javascript:;">
+									<div class="weui-cell__hd">
+										<b style="width:20px;margin-right:5px;display:block; color: #999;">2</b>
+									</div>
+									<div class="weui-cell__bd">
+										<div class="title">【赛道抢占】抢占4大流量入口，让用户源源不断自然增长</div>
+										<div class="desc">
+											<div class="grow1 pull-left">
+												<span class="date" style="margin-right: 5px;">01月04日 19:30</span>
+												<span class="learn-num">7196次学习
+											</div>
+				                    	</div>
+				                    	<div class="shrink pull-right">
+				                    		<div class="label" style="border: 1px solid #F63657; padding: 1px 5px;border-radius: 15px; color: #F63657; font-size: 12px;">试听</div>
+				                    	</div>
+				                    </div>
+				            	</a>
+				            
+								<a class="weui-cell" href="javascript:;">
+									<div class="weui-cell__hd">
+										<b style="width:20px;margin-right:5px;display:block; color: #999;">3</b>
+									</div>
+									<div class="weui-cell__bd">
+										<div class="title">【赛道抢占】抢占4大流量入口，让用户源源不断自然增长</div>
+										<div class="desc">
+											<div class="grow1 pull-left">
+												<span class="date" style="margin-right: 5px;">01月04日 19:30</span>
+												<span class="learn-num">7196次学习
+											</div>
+				                    	</div>
+				                    	<div class="shrink pull-right">
+				                    		<div class="label" style="border: 1px solid #F63657; padding: 1px 5px;border-radius: 15px; color: #F63657; font-size: 12px;">试听</div>
+				                    	</div>
+				                    </div>
+				            	</a>
+				            
+								<a class="weui-cell" href="javascript:;">
+									<div class="weui-cell__hd">
+										<b style="width:20px;margin-right:5px;display:block; color: #999;">4</b>
+									</div>
+									<div class="weui-cell__bd">
+										<div class="title">【赛道抢占】抢占4大流量入口，让用户源源不断自然增长</div>
+										<div class="desc">
+											<div class="grow1 pull-left">
+												<span class="date" style="margin-right: 5px;">01月04日 19:30</span>
+												<span class="learn-num">7196次学习
+											</div>
+				                    	</div>
+				                    	<div class="shrink pull-right">
+				                    		<div class="label" style="border: 1px solid #F63657; padding: 1px 5px;border-radius: 15px; color: #F63657; font-size: 12px;">试听</div>
+				                    	</div>
+				                    </div>
+				            	</a>
+				            
+								<a class="weui-cell" href="javascript:;">
+									<div class="weui-cell__hd">
+										<b style="width:20px;margin-right:5px;display:block; color: #999;">5</b>
+									</div>
+									<div class="weui-cell__bd">
+										<div class="title">【赛道抢占】抢占4大流量入口，让用户源源不断自然增长</div>
+										<div class="desc">
+											<div class="grow1 pull-left">
+												<span class="date" style="margin-right: 5px;">01月04日 19:30</span>
+												<span class="learn-num">7196次学习
+											</div>
+				                    	</div>
+				                    	<div class="shrink pull-right">
+				                    		<div class="label" style="border: 1px solid #F63657; padding: 1px 5px;border-radius: 15px; color: #F63657; font-size: 12px;">试听</div>
+				                    	</div>
+				                    </div>
+				            	</a>
+				            
+				            </div>
+            
+						</li>
+						<li class=" weui-tab__panel3" style="display: none;">
+							<div class="scores">
+								<div class="total-score">
+									<div class="score">4.5分</div>
+										<div class="star-bg">
+											<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half"></i>
+										</div>
+												<div class="desc">
+													<span class="course-eval-text">物超所值</span>
+												</div>
+								</div>
+
+											<div class="score-right">
+												<div class="score1">
+												<div class="weui-progress">
+													<span>讲师专业</span>
+													<div class="weui-progress__bar">
+														<div class="weui-progress__inner-bar js_progress" style="width: 90%;"></div>
+													</div>
+												</div>
+												</div>
+												<div class="score2">
+												<div class="weui-progress">
+													<span>方法有效</span>
+													<div class="weui-progress__bar">
+														<div class="weui-progress__inner-bar js_progress" style="width: 80%;"></div>
+													</div>
+												</div>
+												</div>
+												<div class="score3">
+												<div class="weui-progress">
+													<span>逻辑清晰</span>
+													<div class="weui-progress__bar">
+														<div class="weui-progress__inner-bar js_progress" style="width: 70%;"></div>
+													</div>
+												</div>
+												</div>
+												<div class="score4">
+												<div class="weui-progress">
+													<span>声音画质</span>
+													<div class="weui-progress__bar">
+														<div class="weui-progress__inner-bar js_progress" style="width: 80%;"></div>
+													</div>
+												</div>
+												</div>
+												<div class="score5">
+												<div class="weui-progress">
+													<span>课程服务</span>
+													<div class="weui-progress__bar">
+														<div class="weui-progress__inner-bar js_progress" style="width: 90%;"></div>
+													</div>
+												</div>
+												</div>
+												
+											</div>
+
+										</div>
+
+						</li>
+					</ul>
+					</div>
+					</div>
+				</div>
+
+				<div class="member-block">
+					<i class="icon-meber-vip" style="float: left; display:inline-block; background: url(img/icon1.png) no-repeat center center/contain;width: 30px;height: 30px;margin:2px 5px;"></i>
+					<div class="openner" style="float: left;">
+						开通会员，该课仅需 <span class="member-price" style="font-weight: 700; font-size: 14px; color: #5a483a; margin-right: 20px;">¥39.2</span>
+					</div>
+					<span class="now-open" style="float: right;">
+				立即开通<i class="fa fa-chevron-right" style="margin: 0px 5px;"></i>
+			</span>
+				</div>
+
+				<div class="quick-purchase">
+					立即抢购
+				</div>
+
+				<div class="page actionsheet js_show">
+					<div class="page__bd page__bd_spacing">
+						<a href="javascript:;" class="weui-btn list weui-btn_default" id="showIOSActionSheet"><i class="fa fa-th-large" style="color: #666;"></i></a>
+					</div>
+					<!--BEGIN actionSheet-->
+					<div>
+						<div class="weui-mask" id="iosMask" style="opacity: 0.3; display: none;"></div>
+						<div class="weui-actionsheet" id="iosActionsheet">
+							<div class="weui-actionsheet__title">
+								<p class="weui-actionsheet__title-text">这是一个标题，可以为一行或者两行。</p>
+							</div>
+							<div class="weui-actionsheet__menu">
+								<div class="weui-actionsheet__cell">
+								<span>
+									<i class="fa fa-home"></i>
+									<p>直播间</p>
+								</span>
+								<span>
+									<i class="fa fa-question-circle"></i>
+									<p>咨询</p>
+								</span>
+								<span>
+									<i class="fa fa-ticket"></i>
+									<p>优惠码兑换</p>
+								</span>
+								<span>
+									<i class="fa fa-heart"></i>
+									<p>收藏</p>
+								</span>
+								</div>
+								<div class="weui-actionsheet__cell">
+								<span>
+									<i class="fa fa-gift"></i>
+									<p>赠好友</p>
+								</span>
+								</div>
+							</div>
+							<div class="weui-actionsheet__action">
+								<div class="weui-actionsheet__cell" id="iosActionsheetCancel">取消</div>
+							</div>
+						</div>
+					</div>
+
+					<!--END actionSheet-->
+				</div>
+
+				<script src="js/weui.min.js" type="text/javascript" charset="utf-8"></script>
+				<script src="js/zepto_1.1.3.js" type="text/javascript" charset="utf-8"></script>
+				<script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+				<script type="text/javascript">
+					$(function() {
+						$('.weui-navbar__item').on('click', function() {
+							var num = $(this).index()
+							console.log(num)
+							$(this).addClass('weui-bar__item_on').siblings('.weui-bar__item_on').removeClass('weui-bar__item_on');
+							$(".weui-tab__panel li").eq(num).show().siblings("li").hide();
+						});
+
+					});
+
+					// Actionsheet
+					$(function() {
+						var $iosActionsheet = $('#iosActionsheet');
+						var $iosMask = $('#iosMask');
+
+						function hideActionSheet() {
+							$iosActionsheet.removeClass('weui-actionsheet_toggle');
+							$iosMask.fadeOut(200);
+						}
+
+						$iosMask.on('click', hideActionSheet);
+						$('#iosActionsheetCancel').on('click', hideActionSheet);
+						$("#showIOSActionSheet").on("click", function() {
+							$iosActionsheet.addClass('weui-actionsheet_toggle');
+							$iosMask.fadeIn(200);
+						});
+					});
+					//Vip推荐显示
+					var vipshow = $(".member-block")
+					window.addEventListener("scroll", function() {
+						var scrollTop = document.body.scrollTop || window.pageYOffset || document.documentElement.scrollTop;
+						if(scrollTop > 580) {
+							vipshow.css("display", "block");
+							$(".navbar .weui-navbar").addClass("lock")
+						} else {
+							vipshow.css("display", "none");
+							$(".navbar .weui-navbar").removeClass("lock")
+						}
+					});
+					
+					
+					
+				</script>
+	</body>
+
+</html>

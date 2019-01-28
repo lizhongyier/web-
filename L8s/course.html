@@ -880,12 +880,14 @@
 						function hideActionSheet() {
 							$iosActionsheet.removeClass('weui-actionsheet_toggle');
 							$iosMask.fadeOut(200);
+							$("body").css("overflow","auto")
 						}
 
 						$iosMask.on('click', hideActionSheet);
 						$('#iosActionsheetCancel').on('click', hideActionSheet);
 						$("#showIOSActionSheet").on("click", function() {
 							$iosActionsheet.addClass('weui-actionsheet_toggle');
+							$("body").css("overflow","hidden")
 							$iosMask.fadeIn(200);
 						});
 					});

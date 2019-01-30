@@ -1,0 +1,209 @@
+body{
+	margin: 0px;
+	padding: 0px;
+	background-color: #f9f9f9;
+	color: #333;
+}
+.clear:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.live-room{
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	display: -webkit-flex;
+	display: -moz-box;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-moz-box-orient: vertical;
+	-moz-box-direction: normal;
+	flex-direction: column;
+}
+header{
+	border-bottom: 1px solid #e5e5e5;
+}
+header .box1{
+	width: inherit;
+	height: inherit;
+	display: flex;
+	align-items: center;
+	display: none;
+}
+header .head{
+	flex: 1;
+	padding-left: 10px;
+}
+header div i{
+	display: block;
+	font-size: 24px;
+	margin: 0px 5px;
+}
+header .invite{
+	width: 54px;
+	text-align: center;
+	padding-right: 10px;
+}
+header .box2 .logo {
+	width: 50px;
+	padding-top: 10px;
+	padding-left: 10px;
+	box-sizing: border-box;
+}
+header .box2{
+	width: inherit;
+	height: inherit;
+	display: flex;
+}
+header .box2 .logo img {
+	width: 30px;
+	height: 30px;
+	border-radius: 15px;
+}
+
+header .box2 .live-name {
+	flex: 1;
+	text-align: center;
+	padding-top: 10px;
+	line-height: 17px;
+}
+header .box2 p.school-name {
+	font-size: 14px;
+}
+header .box2 p.live-status {
+	font-size: 10px;
+}
+header .box2 p.live-status span {
+	color: #0fc853;
+}
+header .box2 span .fa {
+	font-size: 18px;
+}
+header .box2 .share {
+	color: #666;
+	text-align: center;
+	width: 50px;
+	padding-top: 10px;
+	padding-right: 10px;
+	box-sizing: border-box;
+	font-size: 10px;
+}
+header .box2 span.fa {
+	font-size: 18px;
+}
+footer{
+	border-top: 1px solid #e5e5e5;
+}
+footer .tab-bar{
+	width: 100%;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+footer .tab-bar .tab-item{
+	flex: 1;
+	text-align: center;
+	font-size: 10px;
+	color: #999;
+}
+footer .tab-bar .tab-item span{
+	font-size: 24px;
+}
+footer .tab-bar .active{
+	color: #0fc853;
+}
+.chat-list{
+	flex: 1;
+	overflow-y:auto ;
+}
+.chat-list li{
+	margin: 5px 0px;
+	display: flex;
+}
+
+.chat-list .msg-box{
+	flex: 1;
+	padding-right: 60px;
+}
+.chat-list .avatar{
+	padding: 0px 10px;
+}
+.chat-list .avatar img{
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
+}
+.chat-list .shang{
+	display: block;
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	line-height: 20px;
+	background-color: rgb(237, 203, 145);
+    color: rgb(185, 141, 66);
+    font-size: 12px;
+    border-radius: 10px;
+    margin: 2px auto 0px;
+}
+.chat-list .nick-name{
+	font-size: 12px;
+}
+.chat-list .nick-name span{
+	color: rgb(153, 153, 153);
+}
+.chat-list .msg{
+	margin: 5px 0px 8px;
+	padding: 5px;
+	border-radius: 3px;
+	background: rgb(176, 231, 90);
+}
+/* 文字 */
+.chat-list .msg .text{
+	line-height: 1.5em;
+	font-size: 14px;
+	color: rgb(80, 85, 89);
+}
+/*图片*/
+.chat-list .msg img{
+	width: 100%;
+}
+.chat-list .image{
+	background-color: rgba(0,0,0,0);
+}
+/*音频*/
+.chat-list .voice {
+	width: 100px;
+	padding: 8px;
+	font-size: 15px;
+}
+.chat-list .voice .progress{
+	line-height: 26px;
+	font-size: 12px;
+}
+.chat-list .player .fa {
+	font-size: 26px;
+	color: #FFFFFF;
+}
+.chat-list .zan,
+.chat-list .return {
+	color: rgb(179, 179, 179);
+	font-size: 12px;
+}
+
+.record {
+	display: none;
+	width: 100%;
+	border-top: 1px solid #e5e5e5;
+	padding: 20px 0px;
+	background-color: #FFFFFF;
+	text-align: center;
+	color: rgb(115, 115, 115);
+	font-size: 14px;
+}
+.record span.fa {
+	color: rgb(247, 54, 87);
+	font-size: 94px;
+}

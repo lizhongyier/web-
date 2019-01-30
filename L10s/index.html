@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/weui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/lightlivestyle.css"/>
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+	</head>
+	<body>
+		
+		<div class="live-room">
+			<header>
+				<div class="box1">
+				<div class="head">
+					<i class="fa fa-home"></i>直播间主页
+				</div>
+				<div class="invite pull-right">
+					<i class="fa fa-share-square-o"></i>
+					<span style="display: block;">邀请卡</span>
+				</div>
+				</div>
+				<div class="box2">
+					<div class="logo">
+					<img src="img/logo.jpg">
+				</div>
+				<div class="live-name">
+					<p class="school-name">上海非凡进修学院</p>
+					<p class="live-status">100人次 <span>● 进行中</span> </p>
+				</div>
+				<div class="share">
+					
+					<span class="fa fa-share-square-o"></span>
+					<div>邀请卡</div>
+				</div>
+				
+			</header>
+			<div class="chat-list">
+				<ul>
+					<li>
+						<div class="avatar">
+							<img src="img/fun.jpg"/>
+							<span class="shang">赏</span>
+						</div>
+						<div class="msg-box">
+							<div class="nick-name">李中义<span>主持人</span></div>
+							<div class="msg">
+								<div class="text">这是文字内容这是文字内容这是文字内容这是文字内容这是文字内容这是文字内容这是文字内容</div>
+							</div>
+							<div class="clear">
+								<span class="pull-left fa fa-thumbs-up zan"></span>
+								<span class="pull-right return">撤销</span>
+							</div>
+						</div>
+						
+					</li>
+					<li>
+						<div class="avatar">
+							<img src="img/fun.jpg"/>
+							<span class="shang">赏</span>
+						</div>
+						<div class="msg-box">
+							<div class="nick-name">李中义<span>主持人</span></div>
+							<div class="msg image">
+								<div class="">
+									<img src="img/douniwan.jpg"/>
+								</div>
+							</div>
+							<div class="clear">
+								<span class="pull-left fa fa-thumbs-up zan"></span>
+								<span class="pull-right return">撤销</span>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="avatar">
+							<img src="img/fun.jpg"/>
+							<span class="shang">赏</span>
+						</div>
+						<div class="msg-box">
+							<div class="nick-name">李中义<span>主持人</span></div>
+							<div class="msg voice">
+								<div class="player clear">
+									<span class="fa fa-play-circle-o pull-left"></span>
+									<span class="progress pull-left">播放中</span>
+									<span class="pull-right">5″</span>
+								</div>
+							</div>
+							<div class="clear">
+								<span class="pull-left fa fa-thumbs-up zan"></span>
+								<span class="pull-right return">撤销</span>
+							</div>
+						</div>
+					</li>
+					<li>123</li>
+				</ul>
+			</div>
+			<footer>
+				<div class="tab-bar">
+					<div class="tab-item item-1 active">
+						<span class="fa fa-microphone"></span>
+						<p>语音</p>
+					</div>
+					<div class="tab-item item-2">
+						<span class="fa fa-pencil"></span>
+						<p>文字</p>
+					</div>
+					<div class="tab-item item-3">
+						<span class="fa fa-th-large"></span>
+						<p>互动</p>
+					</div>
+					<div class="tab-item item-4">
+						<span class="fa fa-book"></span>
+						<p>备课</p>
+					</div>
+					<div class="tab-item item-5">
+						<span class="fa fa-th-list"></span>
+						<p>操作</p>
+					</div>
+				</div>
+				<div class="tab-panel">
+					<div class="record">
+						<p>点击开始录音</p>
+						<span class="fa fa-circle"></span>
+					</div>
+					<div class="text"></div>
+				</div>
+			</footer>
+			
+		</div>
+		
+		
+		
+		
+		<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/zepto_1.1.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/weui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var item=$("footer .tab-item");
+			item.click(function(){
+				console.log($(this).index())
+				var num=$(this).index()
+				$(this).addClass("active").siblings("div").removeClass("active");
+				if(num==0){
+					$(".tab-panel .record").show();
+				}
+				
+			})
+			
+			
+			
+		</script>
+	</body>
+</html>
